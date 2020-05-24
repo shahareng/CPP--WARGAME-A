@@ -16,8 +16,10 @@
 namespace WarGame {
 
 class Board {
+  
   private:
     std::vector<std::vector<Soldier*>> board;
+
   public:
     enum MoveDIR { Up, Down, Right, Left };
     

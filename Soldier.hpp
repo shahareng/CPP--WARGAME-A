@@ -9,14 +9,14 @@ class Soldier
 {
 
 protected:
-    int type;
+    uint player_number;
     int healthPoints;
     int damage;
 
 public:
-    Soldier (int type, int hp, int damage) : type(type), healthPoints(hp), damage(damage) {}
+    Soldier (uint num, int hp, int damage) : player_number(num), healthPoints(hp), damage(damage) {}
 
-    int getType() { return type; }
+    int getPlayer_number() { return player_number; }
     int getHp() { return healthPoints; }
     void setHp(int hp) { healthPoints = hp; }
     int getDamage() { return damage; }

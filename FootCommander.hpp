@@ -8,6 +8,6 @@ class FootCommander: public Soldier
 {
 public:
 
-    FootCommander(const int type, int hp=150, int damage=20) : Soldier(type, hp, damage) {}
+    FootCommander(uint num, int hp=150, int damage=20) : Soldier(num, hp, damage) {}
     void attack(vector<vector<Soldier*>> &b, pair<int,int> location);
 };

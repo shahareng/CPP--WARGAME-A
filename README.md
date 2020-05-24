@@ -1,7 +1,5 @@
 <div dir="rtl" lang="he">
 
-[wargame] (https://github.com/shahareng/CPP--WARGAME-A/blob/master/wargame.png?raw=true)
-
 # משחק מלחמה - שלב א
 
 במטלה זו עליכם לתכנן משחק מלחמה לשני שחקנים על לוח מלבני.

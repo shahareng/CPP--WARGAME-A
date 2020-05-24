@@ -1,3 +1,5 @@
+![wargame](https://user-images.githubusercontent.com/57438349/82753692-42efed80-9dd0-11ea-854f-90d91362b3a9.png)
+
 <div dir="rtl" lang="he">
 
 # משחק מלחמה - שלב א

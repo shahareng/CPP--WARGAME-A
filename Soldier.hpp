@@ -1,8 +1,9 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 
-using std::cout, std::endl, std::string;
+using namespace std;
 
 class Soldier
 {

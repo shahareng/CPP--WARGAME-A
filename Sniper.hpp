@@ -1,6 +1,8 @@
 #include <iostream>
+#include <vector>
 #include "Soldier.hpp"
 
+using namespace std;
 
 class Sniper: public Soldier
 {

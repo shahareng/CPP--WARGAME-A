@@ -21,5 +21,5 @@ public:
     int getDamage() { return damage; }
     bool isAlive() { if (healthPoints>0) return true; else return false; }
 
-    virtual void attack(Soldier& other) = 0; // change ()
+    virtual void attack(vector<vector<Soldier*>> &b, pair<int,int> location) = 0; // change ()
 };

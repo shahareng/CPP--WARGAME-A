@@ -2,7 +2,7 @@
 #include "FootSoldier.hpp"
 
 
-void FootSoldier::attack(Soldier& other)
+void FootSoldier::attack(vector<vector<Soldier*>> &b, pair<int,int> location)
 {
 
 }

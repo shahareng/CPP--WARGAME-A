@@ -2,7 +2,7 @@
 #include "Paramedic.hpp"
 
 
-void Paramedic::attack(Soldier& other)
+void Paramedic::attack(vector<vector<Soldier*>> &b, pair<int,int> location)
 {
 
 }

@@ -8,5 +8,5 @@ using namespace std;
 
 void ParamedicCommander::attack(vector<vector<Soldier*>> &b, pair<int,int> location)
 {
-
+    
 }

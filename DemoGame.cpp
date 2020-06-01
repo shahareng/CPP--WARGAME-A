@@ -17,18 +17,18 @@ namespace WarGame {
 
 		DemoGame::DemoGame(): board (8, 8) {
 			// Add soldiers for player 1:
-			assert(!board.has_soldiers(1));
+			// assert(!board.has_soldiers(1));
 			board[{0,1}] = new FootSoldier(1);
 			board[{0,3}] = new FootCommander(1);
 			board[{0,5}] = new FootSoldier(1);
-			assert(board.has_soldiers(1));
+			// assert(board.has_soldiers(1));
 
 			// Add soldiers for player 2:
-			assert(!board.has_soldiers(2));
+			// assert(!board.has_soldiers(2));
 			board[{7,1}] = new FootSoldier(2);
 			board[{7,3}] = new FootCommander(2);
 			board[{7,5}] = new FootSoldier(2);
-			assert(board.has_soldiers(2));
+			// assert(board.has_soldiers(2));
 
 			// In your game, you can put more soldier types, such as the sniper and the paramedic types.
 		}
@@ -50,5 +50,15 @@ namespace WarGame {
 
 			// If no player won, return "tie":
 			return 0;
+		}
+
+		DemoGame::~DemoGame() {
+			for (int iRow=0; iRow<numRows; ++iRow) {
+				for (int iCol=0; iCol<numCols; ++iCol) {
+					Soldier* soldier = board[{iRow,iCol}];
+					if (soldier)
+						delete soldier;
+				}
+			}
 		}
 }

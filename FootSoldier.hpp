@@ -7,6 +7,6 @@ using namespace std;
 class FootSoldier: public Soldier
 {
 public:
-    FootSoldier(uint num, int hp=100, int damage=10) : Soldier(num, hp, damage) {}
+    FootSoldier(uint num, int hp=100, int damage=10, string type="FootSoldier") : Soldier(num, hp, damage, type) {}
     void attack(vector<vector<Soldier*>> &b, pair<int,int> location);
 };

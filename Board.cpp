@@ -54,7 +54,7 @@ namespace WarGame {
                 target= make_pair(source.first, source.second+1);
                 break;
             case Left:
-                target= make_pair(source.firs, source.secondt-1);
+                target= make_pair(source.first, source.second-1);
                 break;
         }
         if(target.first >= board.size() || target.first < 0 || target.second >= board.size() || target.second < 0) 
@@ -67,7 +67,7 @@ namespace WarGame {
         }
         (*this)[source] = nullptr;
 		(*this)[target] = soldier;
-        soldier->attack((*this), target);
+        soldier->attack(board, target);
     }
 
     // returns true iff the board contains one or more soldiers of the given player.

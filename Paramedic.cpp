@@ -4,113 +4,82 @@
 
 using namespace std;
 
-void full(Soldier* s)
-{
-    string type = s->getType();
-    switch (type)
-    {
-        case "FootSoldier":
-            s->setHp(100);
-            break;
-        case "FootCommander":
-            s->setHp(150);
-            break;
-        case "Sniper":
-            s->setHp(100);
-            break;
-        case "SniperCommander":
-            s->setHp(120);
-            break;
-        case "Paramedic":
-            s->setHp(100);
-            break;
-        case "ParamedicCommander":
-            s->setHp(200);
-            break;
-        }
-}
-
 void Paramedic::attack(vector<vector<Soldier*>> &b, pair<int,int> location)
 {
+    int x = location.first;
+    int y = location.second;
     Soldier* s;
-    Soldier* me = (*this)[location];
+    Soldier* me = b[x][y];
+
     // Up
-    pair<int,int> target = make_pair(location.first+1, location.second);
-    if(target.first >= b.size() || target.first < 0 || target.second >= b.size() || target.second < 0)
+    s = b[x+1][y];
+    if(x+1 < b.size() || x-1 < 0 || y-1 < 0 || y+1 > b[x].size())
     {
         throw invalid_argument("Outside of the board");
     }
-	s = (*this)[target];
 	if (s != nullptr && s->getPlayer_number() == me->getPlayer_number())
-        full(s);
+        s->setHp(getMaxHp());
 
     // Down
-    pair<int,int> target = make_pair(location.first-1, location.second);
-    if(target.first >= b.size() || target.first < 0 || target.second >= b.size() || target.second < 0)
+    s = b[x-1][y];
+    if(x+1 < b.size() || x-1 < 0 || y-1 < 0 || y+1 > b[x].size())
     {
         throw invalid_argument("Outside of the board");
     }
-	s = (*this)[target];
 	if (s != nullptr && s->getPlayer_number() == me->getPlayer_number())
-        full(s);
+        s->setHp(getMaxHp());
     
     // Left
-    pair<int,int> target = make_pair(location.first, location.second-1);
-    if(target.first >= b.size() || target.first < 0 || target.second >= b.size() || target.second < 0)
+    s = b[x][y-1];
+    if(x+1 < b.size() || x-1 < 0 || y-1 < 0 || y+1 > b[x].size())
     {
         throw invalid_argument("Outside of the board");
     }
-	s = (*this)[target];
 	if (s != nullptr && s->getPlayer_number() == me->getPlayer_number())
-        full(s);
+        s->setHp(getMaxHp());
 
     // Right
-    pair<int,int> target = make_pair(location.first, location.second+1);
-    if(target.first >= b.size() || target.first < 0 || target.second >= b.size() || target.second < 0)
+    s = b[x][y+1];
+    if(x+1 < b.size() || x-1 < 0 || y-1 < 0 || y+1 > b[x].size())
     {
         throw invalid_argument("Outside of the board");
     }
-	s = (*this)[target];
 	if (s != nullptr && s->getPlayer_number() == me->getPlayer_number())
-        full(s);
+        s->setHp(getMaxHp());
 
     // Up and Right
-    pair<int,int> target = make_pair(location.first+1, location.second+1);
-    if(target.first >= b.size() || target.first < 0 || target.second >= b.size() || target.second < 0)
+    s = b[x+1][y+1];
+    if(x+1 < b.size() || x-1 < 0 || y-1 < 0 || y+1 > b[x].size())
     {
         throw invalid_argument("Outside of the board");
     }
-	s = (*this)[target];
 	if (s != nullptr && s->getPlayer_number() == me->getPlayer_number())
-        full(s);
+        s->setHp(getMaxHp());
 
     // Up and Left
-    pair<int,int> target = make_pair(location.first+1, location.second-1);
-    if(target.first >= b.size() || target.first < 0 || target.second >= b.size() || target.second < 0)
+    s = b[x+1][y-1];
+    if(x+1 < b.size() || x-1 < 0 || y-1 < 0 || y+1 > b[x].size())
     {
         throw invalid_argument("Outside of the board");
     }
-	s = (*this)[target];
 	if (s != nullptr && s->getPlayer_number() == me->getPlayer_number())
-        full(s);
+        s->setHp(getMaxHp());
 
     // Down and Right
-    pair<int,int> target = make_pair(location.first-1, location.second+1);
-    if(target.first >= b.size() || target.first < 0 || target.second >= b.size() || target.second < 0)
+    s = b[x-1][y+1];
+    if(x+1 < b.size() || x-1 < 0 || y-1 < 0 || y+1 > b[x].size())
     {
         throw invalid_argument("Outside of the board");
     }
-	s = (*this)[target];
 	if (s != nullptr && s->getPlayer_number() == me->getPlayer_number())
-        full(s);
+        s->setHp(getMaxHp());
 
     // Down and Left
-    pair<int,int> target = make_pair(location.first-1, location.second-1);
-    if(target.first >= b.size() || target.first < 0 || target.second >= b.size() || target.second < 0)
+    s = b[x-1][y-1];
+    if(x+1 < b.size() || x-1 < 0 || y-1 < 0 || y+1 > b[x].size())
     {
         throw invalid_argument("Outside of the board");
     }
-	s = (*this)[target];
 	if (s != nullptr && s->getPlayer_number() == me->getPlayer_number())
-        full(s);
+        s->setHp(getMaxHp());
 }

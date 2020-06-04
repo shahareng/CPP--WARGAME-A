@@ -10,8 +10,8 @@ void ParamedicCommander::attack(vector<vector<Soldier*>> &b, pair<int,int> locat
 {
     int x = location.first;
     int y = location.second;
-    Soldier* s;
-    Soldier* me = b[x][y];
+    Paramedic* s;
+    Paramedic* me = b[x][y];
     me->attack(b, location);
     for(int i = 0; i < b.size(); ++i)
     {
